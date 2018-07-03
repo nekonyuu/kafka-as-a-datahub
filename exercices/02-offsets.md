@@ -33,5 +33,4 @@ Conservez ce nom, et trouvez un moyen de revenir au début des partitions :).
 
 ## Informations
 
- * Broker Kafka: `10.33.0.42:29092`
- * API: http://10.33.0.42:5000
+ * Broker Kafka: `163.172.145.138:9092`

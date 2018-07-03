@@ -23,13 +23,15 @@
   * Rétention de données
     * Compression (compact)
     * Nettoyage (clean)
+  * Kafka Streams
+    * Pourquoi un nouvel arrivant ?
+    * Notions basiques
+    * Deep Dive sur le Domain Specific Language fourni
+      * Aggrégations, filtres, transformations, ...
 
 ## Exercices
 
-  * Utilisation des clients Kafka officiels (Consumer/Producer)
-  * Gestion des offsets
-  * Kafka Stream
-
-## Exam
-
-Voir [là](exam/goal.md)
+  * [Utilisation des clients Kafka officiels (Consumer/Producer)](exercices/01-consumer-producer.md)
+  * [Gestion des offsets](exercices/02-offsets.md)
+  * [Kafka Stream](exercices/03-kafka-streams.md)
+  * [Kafka Stream - Avancé](exercices/04-kafka-streams.md)

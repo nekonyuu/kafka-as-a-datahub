@@ -2,41 +2,41 @@
 
 ## Contexte
 
-Des capteurs fournissent des informations d'utilisation CPU, RAM et disque globaux concernant 
-des datacenters dans plusieurs régions du monde. Chacun de ces capteurs écrit 
-dans un topic kafka nommé `sensors`.
+Vous venez d'arriver dans la société MediaSeller, site d'e-commerce vendant de multiples produits
+multimedia, des livres, appareils photo, etc.
 
-Ces messages possèdent la forme suivante :
+Vous prenez part à un workshop mis en place par l'équipe pour travailler sur les données
+produites par le site web de la société afin de pouvoir en sortir des tendances, ainsi que des 
+informations techniques utiles.
+
+Ces évènements de visite sont modélisés comme suit:
 
 ```json
-{"timestamp": 1530472776, "source": "2d53ead54f0d0cf3431eb4d2bfccb6894a0037c3d9ea76bd8ee55b8bd7e50c0b", "metric": "ram", "value": 4002}
+{
+    "id": "5db37baf-06ed-4a9b-8e69-9b4f34ed959e",
+    "sourceIp": "42.42.183.75",
+    "url": "/store/tech/tv",
+    "timestamp": "2019-03-02T09:21:05.305622Z",
+}
 ```
+
+Ils sont tous envoyés dans un topic kafka nommé `visits`.
 
 ## But
 
 ### Part 1
 
-Vous devez désanonymiser le nom de la source en appelant le service qui fournit ces données, 
-via un appel HTTP REST GET `/source/hash/<hash>` sur le web service donné, puis produire ce même
-message désanonymisé sur un topic nommé `sensors_yourname_clear`.
+Calculez le nombre de visites moyen pour chaque url, mis à jour en temps réel :
 
-Exemple de réponse de l'API sur GET `/source/name/ams2` :
-
-```json
-{"source_name": "ams2", "group": "eur"}
-```
-
-Une fois désanonymisé, vous devrez calculer des moyennes de chaque métrique sur 30 secondes, 1 minute et 5 minutes et les produire dans un topic nommé `sensors_yourname_aggs`.
+  * sur les 30 dernières secondes, dans le topic `votre-nom_visits_30s` ;
+  * sur la dernière minute, dans le topic `votre-nom_visits_1mn` ;
+  * sur les 5 dernières minutes, dans le topic `votre-nom_visits_5mn`.
 
 ### Part 2
 
 Vous devez maintenant envoyer les messages que vous produisez avec une clé.
 
-L'idée est que vous puissiez garantir l'écriture des messages concernant le 
-même groupe dans la même partition.
-
-Vous pouvez connaître le groupe d'une source via les mêmes appels que 
-précedemment, champ `group` du JSON.
+L'idée est que vous puissiez garantir l'écriture des messages concernant la même URL dans la même partition.
 
 ### Part 3 (bonus)
 
@@ -48,5 +48,4 @@ l'écriture des messages sur tous les brokers.
 
 ## Informations
 
- * Broker Kafka: `10.33.0.42:29092`
- * API: http://10.33.0.42:5000
+ * Broker Kafka: `163.172.145.138:9092`
