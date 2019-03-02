@@ -37,7 +37,7 @@ public class Main {
         // Here you go :)
 
         final KStream<String, SensorEvent> sensorsStream = builder
-                .stream("sensors", ???)
+                .stream("sensors", null);
 
         final KafkaStreams streams = new KafkaStreams(builder.build(), streamsConfiguration);
 
