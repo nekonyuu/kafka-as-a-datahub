@@ -34,4 +34,3 @@
   * [Utilisation des clients Kafka officiels (Consumer/Producer)](exercices/01-consumer-producer.md)
   * [Gestion des offsets](exercices/02-offsets.md)
   * [Kafka Stream](exercices/03-kafka-streams.md)
-  * [Kafka Stream - Avancé](exercices/04-kafka-streams.md)
