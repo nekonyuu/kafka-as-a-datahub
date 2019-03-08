@@ -1,5 +1,7 @@
 # Kafka as a Data Hub
 
+[![Join the chat at https://gitter.im/kafka-as-a-datahub-exercices/community](https://badges.gitter.im/kafka-as-a-datahub-exercices/community.svg)](https://gitter.im/kafka-as-a-datahub-exercices/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Plan du cours
 
   * Pipelines de données et Messaging
