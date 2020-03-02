@@ -70,4 +70,4 @@ Tips:
 
 ## Informations
 
- * Broker Kafka: `163.172.145.138:9092`
+ * Broker Kafka: `127.0.0.1:9092`
