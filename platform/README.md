@@ -1,10 +1,10 @@
 # Running Kafka
 
-Vous pouvez lancer un broker Kafka sur votre machine avec Doc ker.
+Vous pouvez lancer un broker Kafka sur votre machine avec Docker.
 
 D'abord, installez Docker (for Windows, Mac, ou le package linux), puis docker-compose (https://docs.docker.com/compose/install/).
 
-Vous pouvez ensuite aller dans le dossier `docker`, editez `docker-compose.yml` en remplaçant YOUR_IP par votre adresse IP, puis faites :
+Vous pouvez ensuite aller dans le dossier `docker`, puis faites :
 
 ```bash
 docker-compose up -d
