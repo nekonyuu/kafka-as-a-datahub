@@ -3,11 +3,6 @@ import json
 from enum import Enum
 
 
-class Sentiment(str, Enum):
-    Like = "like"
-    Dislike = "dislike"
-
-
 class ViewCategory(str, Enum):
     StartOnly = "start_only"
     Half = "half"
@@ -27,5 +22,4 @@ class MovieView(Record):
 
 class MovieLike(Record):
     _id: int
-    sentiment: Sentiment
-    score: int
+    score: float

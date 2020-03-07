@@ -14,7 +14,6 @@ def _load_movies():
 
 movies = [m for m in _load_movies()]
 available_view_cats = [v for v in ViewCategory]
-available_sentiments = [s for s in Sentiment]
 
 
 def generate_view():
@@ -32,6 +31,5 @@ def generate_like():
     movie = movies[random.randint(0, len(movies) - 1)]
     return MovieLike(
         _id=movie._id,
-        sentiment=available_sentiments[random.randint(0, len(available_sentiments) - 1)],
-        score=random.randint(0, 5),
+        score=round(random.random() * 5, 2),
     )
