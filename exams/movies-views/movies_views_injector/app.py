@@ -1,32 +1,28 @@
 import json
-import time
+import os
 import random
+import time
 
 import faust
 
-from .models import MovieView, MovieLike
-from .source import movies, generate_view, generate_like
-     
+from .models import MovieLike, MovieView
+from .source import generate_like, generate_view, movies
 
-app = faust.App('movies-views-injector', broker='kafka://localhost')
+BROKER_HOST = os.environ.get("BROKER_HOST", "localhost")
 
-views_topic = app.topic('views', key_type=str, value_type=MovieView)
-likes_topic = app.topic('likes', key_type=str, value_type=MovieLike)
+app = faust.App("movies-views-injector", broker=f"kafka://{BROKER_HOST}")
+
+views_topic = app.topic("views", key_type=str, value_type=MovieView)
+likes_topic = app.topic("likes", key_type=str, value_type=MovieLike)
+
 
 @app.timer(interval=0.05)
 async def view_sender(app):
     view = generate_view()
-    await views_topic.send(
-        key=str(view._id),
-        value=view
-    )
+    await views_topic.send(key=str(view._id), value=view)
 
 
 @app.timer(interval=0.05)
 async def like_sender(app):
     like = generate_like()
-    await likes_topic.send(
-        key=str(like._id),
-        value=like
-    )
-
+    await likes_topic.send(key=str(like._id), value=like)

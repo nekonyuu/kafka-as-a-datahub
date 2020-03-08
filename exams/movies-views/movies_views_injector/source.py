@@ -2,7 +2,7 @@ import gzip
 import json
 import random
 
-from .models import Movie, MovieView, ViewCategory, MovieLike, Sentiment
+from .models import Movie, MovieView, ViewCategory, MovieLike
 
 
 def _load_movies():

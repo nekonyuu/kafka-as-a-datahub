@@ -38,7 +38,11 @@ Vous pouvez partir d'un template selon votre langage:
   * Java: https://git.esgi.nyuu.eu/nekonyuu/kafka-as-a-datahub-project-template-java
     * Kafka Streams, REST framework à votre charge
 
-Vous devrez aussi reprendre le fichier `docker-compose.yml` des exercices et remplacer l'entrée `injector` par les lignes suivantes (l'indentation est importante) :
+Vous devrez aussi reprendre le fichier `docker-compose.yml` des exercices :
+
+  * Replacez vous dans le dossier `platform/docker` du dépôt d'exercices
+  * `docker-compose down`
+  * remplacer l'entrée `injector` par les lignes suivantes (l'indentation est importante) :
 
 ```yaml
   injector:
@@ -46,9 +50,14 @@ Vous devrez aussi reprendre le fichier `docker-compose.yml` des exercices et rem
     depends_on:
       - broker
     hostname: injector
+    environment:
+      BROKER_HOST: broker:29092
     container_name: injector
 
 ```
+  * `docker-compose up -d` 
+
+Vous êtes parés !
 
 ## Applications à implémenter
 
