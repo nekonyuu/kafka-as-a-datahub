@@ -24,6 +24,9 @@ Ils sont tous envoyés dans un topic kafka nommé `visits`.
 
 ## Environnement
 
+
+### Local
+
 Vous devez démarrer localement les éléments nécessaire à cet exercice. Clonez ce dépôt Git, placez vous dans le dossier `platform/docker` puis faites la commande suivante:
 
 ```bash
@@ -34,6 +37,16 @@ Ceci va lancer sur votre machine l'ensemble des composants nécessaires, allez e
 
 Pour l'usage de ce TP, vous vous connectez au broker Kafka suivant : `127.0.0.1:9092`
 
+### Public
+
+Dans le cas où votre machine ne vous permet pas d'utiliser Docker localement, voici un broker à utiliser
+
+  * IP: `212.47.229.218:9092`
+    * Dashboard: `212.47.229.218:9021`
+    * Broker: `212.47.229.218:9092`
+
+### Template Code
+
 Vous pouvez partir d'un template selon votre langage de prédilection:
 
   * Scala
@@ -42,6 +55,13 @@ Vous pouvez partir d'un template selon votre langage de prédilection:
   * Java
     * https://git.esgi.nyuu.eu/nekonyuu/kafka-as-a-datahub-project-template-java
     * Kafka Streams, REST framework à votre charge
+
+## Documentation
+
+  * Kafka Client Java API: https://docs.confluent.io/current/clients/java.html#java-client
+  * Consumer Configuration Reference: https://docs.confluent.io/current/installation/configuration/consumer-configs.html
+  * Producer Configuration Reference: https://docs.confluent.io/current/installation/configuration/producer-configs.html
+  
 
 ## Questions
 
