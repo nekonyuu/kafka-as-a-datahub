@@ -1,5 +1,4 @@
 from faust import Record
-import json
 from enum import Enum
 
 

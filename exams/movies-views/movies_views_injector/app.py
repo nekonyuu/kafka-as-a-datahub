@@ -1,14 +1,11 @@
-import json
 import os
-import random
-import time
 
 import faust
 
 from .models import MovieLike, MovieView
-from .source import generate_like, generate_view, movies
+from .source import generate_like, generate_view
 
-BROKER_HOST = os.environ.get("BROKER_HOST", "212.47.229.218")
+BROKER_HOST = os.environ.get("BROKER_HOST", "localhost")
 
 app = faust.App("movies-views-injector", broker=f"kafka://{BROKER_HOST}")
 

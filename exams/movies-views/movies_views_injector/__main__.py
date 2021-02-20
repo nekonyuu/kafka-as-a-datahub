@@ -1,3 +1,3 @@
-import app
+from app import app
 
-app.app.main()
+app.main()
