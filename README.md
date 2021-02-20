@@ -27,8 +27,3 @@
     * Notions basiques
     * Deep Dive sur le Domain Specific Language fourni
       * Aggrégations, filtres, transformations, ...
-
-## Exercices
-
-  * [Utilisation des clients Kafka officiels (Consumer/Producer)](exercices/01-consumer-producer.md)
-  * [Kafka Stream](exercices/02-kafka-streams.md)

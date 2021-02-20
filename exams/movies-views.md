@@ -1,4 +1,4 @@
-# Projet - Kafka Streams - Sujet n°1
+# Projet - Kafka Streams
 
 Vous êtes arrivé dans la société KazaaMovies, spécialisée dans le streaming de films à destination des particuliers.
 
@@ -46,7 +46,7 @@ Vous devrez aussi reprendre le fichier `docker-compose.yml` des exercices :
 
 ```yaml
   injector:
-    image: nekonyuu/tp-kafka-movies-views:1.0
+    image: nekonyuu/tp-kafka-movies-views:1.1
     depends_on:
       - broker
     hostname: injector
@@ -76,8 +76,10 @@ Le Product Owner vous demande de lui fournir les informations suivantes
       * depuis le lancement
       * sur la dernière minute
       * sur les cinq dernières minutes
-  * Top 10 des films ayant les meilleurs retours (score > 4)
-  * Top 10 des films ayant les moins bons retours (score < 2)
+  * Top 10 
+    * des films ayant les meilleurs retours (score > 4)
+    * des films ayant les moins bons retours (score < 2)
+    * Tip: vous aurez besoin d'une moyenne mobile pour calculer cela depuis le lancement du stream.
 
 Tout ceci doit être exposé sur une API REST (format de sortie JSON) ayant le schéma suivant:
 
@@ -107,7 +109,7 @@ Tout ceci doit être exposé sur une API REST (format de sortie JSON) ayant le s
 }
 ```
   * GET /stats/ten/best/score
-    * Donne les 10 meilleurs films par score moyen, trié par score décroissant
+    * Donne les 10 meilleurs films de tous les temps selon leur score moyen, trié par score décroissant
 ```json
 [
   {
@@ -125,7 +127,7 @@ Tout ceci doit être exposé sur une API REST (format de sortie JSON) ayant le s
 ]
 ```
   * GET /stats/ten/best/views
-    * Donne les 10 meilleurs films par vues, trié par nombre de vues décroissant
+    * Donne les 10 meilleurs films de tous les temps selon leurs vues, trié par nombre de vues décroissant
 ```json
 [
   {
@@ -143,7 +145,7 @@ Tout ceci doit être exposé sur une API REST (format de sortie JSON) ayant le s
 ]
 ```
   * GET /stats/ten/worst/score
-    * Donne les 10 pires films par score, trié par score croissant
+    * Donne les 10 pires films de tous les temps selon leur score moyen, trié par score croissant
 ```json
 [
   {
@@ -161,7 +163,7 @@ Tout ceci doit être exposé sur une API REST (format de sortie JSON) ayant le s
 ]
 ```
   * GET /stats/ten/worst/views
-    * Donne les 10 pires films par vues, trié par nombre de vues croissant
+    * Donne les 10 pires films de tous les temps selon leurs vues, trié par nombre de vues croissant
 ```json
 [
   {

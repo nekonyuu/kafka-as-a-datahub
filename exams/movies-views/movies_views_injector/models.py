@@ -12,11 +12,13 @@ class ViewCategory(str, Enum):
 class Movie(Record):
     _id: int
     title: str
+    adult: bool
 
 
 class MovieView(Record):
     _id: int
     title: str
+    adult: bool
     view_category: ViewCategory
 
 

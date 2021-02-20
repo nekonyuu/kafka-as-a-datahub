@@ -8,7 +8,7 @@ import faust
 from .models import MovieLike, MovieView
 from .source import generate_like, generate_view, movies
 
-BROKER_HOST = os.environ.get("BROKER_HOST", "localhost")
+BROKER_HOST = os.environ.get("BROKER_HOST", "212.47.229.218")
 
 app = faust.App("movies-views-injector", broker=f"kafka://{BROKER_HOST}")
 
