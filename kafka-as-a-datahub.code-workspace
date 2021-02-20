@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "exams\\movies-views"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBarBadge.background": "#4e7808",
+			"list.activeSelectionForeground": "#00BCD4",
+			"list.inactiveSelectionForeground": "#00BCD4",
+			"list.highlightForeground": "#00BCD4",
+			"scrollbarSlider.activeBackground": "#00BCD450",
+			"editorSuggestWidget.highlightForeground": "#00BCD4",
+			"textLink.foreground": "#00BCD4",
+			"progressBar.background": "#00BCD4",
+			"pickerGroup.foreground": "#00BCD4",
+			"notificationLink.foreground": "#00BCD4",
+			"editorWidget.resizeBorder": "#00BCD4",
+			"editorWidget.border": "#00BCD4",
+			"settings.modifiedItemIndicator": "#00BCD4",
+			"settings.headerForeground": "#00BCD4",
+			"panelTitle.activeBorder": "#00BCD4",
+			"breadcrumb.activeSelectionForeground": "#00BCD4",
+			"menu.selectionForeground": "#00BCD4",
+			"menubar.selectionForeground": "#00BCD4",
+			"activityBar.background": "#5b063b",
+			"titleBar.activeBackground": "#2b031c",
+			"titleBar.activeForeground": "#e7e7e7",
+			"activityBar.activeBackground": "#5b063b",
+			"activityBar.activeBorder": "#4e7808",
+			"activityBar.foreground": "#e7e7e7",
+			"activityBar.inactiveForeground": "#e7e7e799",
+			"activityBarBadge.foreground": "#e7e7e7",
+			"statusBar.background": "#2b031c",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#5b063b",
+			"titleBar.inactiveBackground": "#2b031c99",
+			"titleBar.inactiveForeground": "#e7e7e799"
+		},
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"peacock.color": "#2b031c"
+	}
+}
