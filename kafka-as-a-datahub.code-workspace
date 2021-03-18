@@ -42,6 +42,9 @@
 			"titleBar.inactiveForeground": "#e7e7e799"
 		},
 		"java.configuration.updateBuildConfiguration": "automatic",
-		"peacock.color": "#2b031c"
+		"peacock.color": "#2b031c",
+		"files.watcherExclude": {
+			"**/target": true
+		}
 	}
 }
