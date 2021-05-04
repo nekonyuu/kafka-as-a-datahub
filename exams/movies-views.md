@@ -1,4 +1,4 @@
-# Projet - Kafka Streams
+# Projet 1 - Kafka Streams pour l'aggrégation de statistiques de visite en temps réel
 
 Vous êtes arrivé dans la société KazaaMovies, spécialisée dans le streaming de films à destination des particuliers.
 
@@ -32,32 +32,11 @@ Il y a actuellement deux topics qui vous fournissent des données:
 
 ## Environnement
 
-Vous pouvez partir d'un template selon votre langage:
-  * Scala: https://git.esgi.nyuu.eu/nekonyuu/kafka-as-a-datahub-project-template-scala
-    * Akka HTTP, Kafka Streams
-  * Java: https://git.esgi.nyuu.eu/nekonyuu/kafka-as-a-datahub-project-template-java
-    * Kafka Streams, REST framework à votre charge
+Vous allez utiliser un cluster Kafka préalablement déployé.
 
-Vous devrez aussi reprendre le fichier `docker-compose.yml` des exercices :
+Les informations le concernant vous seront communiqués par Teams, elles seront à saisir dans le fichier `kafka.properties`.
 
-  * Replacez vous dans le dossier `platform/docker` du dépôt d'exercices
-  * `docker-compose down`
-  * remplacer l'entrée `injector` par les lignes suivantes (l'indentation est importante) :
-
-```yaml
-  injector:
-    image: nekonyuu/tp-kafka-movies-views:1.1
-    depends_on:
-      - broker
-    hostname: injector
-    environment:
-      BROKER_HOST: broker:29092
-    container_name: injector
-
-```
-  * `docker-compose up -d` 
-
-Vous êtes parés !
+Concernant le squelette de projet, vous pouvez vous inspirer du skeleton du TP de Kafka Streams: https://github.com/nekonyuu/kafka-as-a-datahub-exercises-skeletons/tree/main/kafka-stream .
 
 ## Applications à implémenter
 
