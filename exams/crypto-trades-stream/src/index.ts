@@ -1,16 +1,17 @@
 import WebSocket from "ws";
 import Kafka from "node-rdkafka";
 
-const wssUrlBTC = "wss://stream.binance.com:9443/ws/btcusdt@trade";
+const pair = process.env.PAIR || "btcusdt"
+const wssUrlBTC = `wss://stream.binance.com:9443/ws/${pair}@trade`;
 const ws = new WebSocket(wssUrlBTC);
 
 var producer = new Kafka.Producer({
-  "metadata.broker.list": "pkc-ewzgj.europe-west4.gcp.confluent.cloud:9092",
+  "metadata.broker.list": "pkc-4ygn6.europe-west3.gcp.confluent.cloud:9092",
   "security.protocol": "sasl_ssl",
   "sasl.mechanisms": "PLAIN",
-  "sasl.username": "AP7HIDDZPNRBS4GX",
+  "sasl.username": "BWJQHNAOSZKVJSSC",
   "sasl.password":
-    "4vOcl3vTTtU+6gUjNq4IGxtJNq3A/uW6F1PQe3z6BaX+DIHDgD6xKq9rSa2McomY",
+    "W5Rb/LccdOc8QcvgK0Wg2Rv7ezUqhEr+a4G5irTt4LD+U3cggHZmTi4UgxarzpN6",
 });
 
 interface BinanceTrade {
