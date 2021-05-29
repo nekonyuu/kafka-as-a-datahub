@@ -146,17 +146,14 @@ Tout ceci doit être exposé sur une API REST (format de sortie JSON) ayant le s
 ```json
 [
   {
-    "id": 2000,
     "title": "movie title 1",
     "views": 2
   },
   {
-    "id": 2,
     "title": "movie title 2",
     "views": 5
   },
   {
-    "id": 12,
     "title": "movie title 3",
     "views": 12
   },
